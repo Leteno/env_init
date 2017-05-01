@@ -20,7 +20,9 @@ RUN chmod 0600 /data/.gitcookies
 RUN git config --global http.cookiefile /data/.gitcookies
 RUN git config --global user.name "Jun"
 RUN git config --global user.email "changchunjunhao@gmail.com"
+RUN echo '.googlesource.com,TRUE,/,TRUE,2147483647,o,git-changchunjunhao.gmail.com=1/hOHftmjJH7w1D4d3xLqKfZlu0apYsG7-v_a0iIcNksY' >> /data/.gitcookies
 
-RUN echo $'.googlesource.com,TRUE,/,TRUE,2147483647,o,git-changchunjunhao.gmail.com=1/hOHftmjJH7w1D4d3xLqKfZlu0apYsG7-v_a0iIcNksY' >> /data/.gitcookies
+RUN echo '(setq backup-directory-alist `(("." . "~/.saves")))' >> ~/.emacs
+RUN echo "(put 'upcase-region 'disabled nil)" >> ~/.emacs
 
 RUN export HISTFILE=/data/experiment/.dockerhistory
