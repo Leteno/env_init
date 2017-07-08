@@ -5,6 +5,7 @@ RUN apt-get -y update && apt-get install -y openjdk-8-jdk git-core gnupg flex bi
 
 # request addition
 RUN apt-get install -y python
+RUN apt-get install -y pip
 
 RUN mkdir -p /usr/bin
 RUN export PATH="/usr/bin:$PATH"
