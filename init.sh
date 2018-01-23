@@ -1,6 +1,7 @@
 export LANG=en_US.utf-8
 git config --global user.email changchunjunhao@gmail.com
 git config --global user.name zhengjunhao
+git config --global core.editor emacs
 
 alias emacs="emacs --color=no"
 cat >> ~/.emacs <<EOF
