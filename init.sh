@@ -1,13 +1,15 @@
 export LANG=en_US.utf-8
 git config --global user.email changchunjunhao@gmail.com
 git config --global user.name zhengjunhao
-git config --global core.editor emacs
+git config --global core.editor "emacs --color=no -nw"
 
 sudo apt-get update
 
 # emacs
 echo Y | sudo apt-get install emacs
-alias emacs="emacs --color=no"
+cat >> ~/.bashrc <<EOF
+alias emacs="emacs --color=no -nw"
+EOF
 cat >> ~/.emacs <<EOF
 (setq backup-directory-alist \`(("." . "~/.saves")))
 (put 'upcase-region 'disabled nil)
