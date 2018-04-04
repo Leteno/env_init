@@ -6,13 +6,18 @@ RUN apt-get update
 RUN apt-get install -y openjdk-8-jdk git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip
 
 # request addition
+RUN apt-get update
 RUN apt-get install -y python
+RUN apt-get install -y python-requests
 RUN apt-get install -y emacs tmux
+RUN apt-get install -y jq gdb
 
 RUN mkdir -p /usr/bin
 RUN export PATH="/usr/bin:$PATH"
 RUN curl "https://storage.googleapis.com/git-repo-downloads/repo" > /usr/bin/repo
 RUN chmod a+x /usr/bin/repo
+
+RUN alias emacs="emacs --color=no"
 
 RUN mkdir -p /data/
 RUN touch /data/.gitcookies
