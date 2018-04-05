@@ -1,1 +1,1 @@
-docker run -t -i -v ~/workspace:/data/workspace experiment:latest
+docker run -t -i -v ~/workspace:/data/workspace -v ~/.ssh:/root/.ssh experiment:latest
